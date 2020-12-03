@@ -12,7 +12,6 @@
 #include "nlohmann/json.hpp"
 #include "student.hpp"
 
-using std::cout;
 
 Student get_student_from_json(const nlohmann::json& j);
 
