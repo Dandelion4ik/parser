@@ -61,6 +61,6 @@ void print(const std::vector<Student>& students) {
 }
 
 bool is_valid_meta(const nlohmann::json& data,
-                   const std::vector<Student> students) {
+                   const std::vector<Student>& students) {
   return data.at("_meta").at("count") == students.size();
 }

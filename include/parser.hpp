@@ -21,6 +21,6 @@ std::vector<Student> get_vector_from_json(const nlohmann::json& data);
 void print(const std::vector<Student>& students);
 
 bool is_valid_meta(const nlohmann::json& data,
-                   const std::vector<Student> students);
+                   const std::vector<Student>& students);
 
 #endif  // INCLUDE_PARSER_HPP_
