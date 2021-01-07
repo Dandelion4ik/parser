@@ -38,15 +38,8 @@ add_executable(tests
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
         sources/student.cpp sources/parser.cpp)
 
-add_executable(parser
-        ${CMAKE_CURRENT_SOURCE_DIR}
-        sources/student.cpp sources/parser.cpp)
 
 target_include_directories(template
-        PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
-        )
-
-target_include_directories(parser
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
         )
 
@@ -56,7 +49,6 @@ target_include_directories(tests
 
 target_link_libraries(template PUBLIC nlohmann_json::nlohmann_json)
 target_link_libraries(tests GTest::main template)
-target_link_libraries(parser template)
 
 enable_testing()
 add_test(NAME unit_tests COMMAND tests)
@@ -67,7 +59,6 @@ if (BUILD_COVERAGE)
     list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
     find_package(codecov)
     # TODO: change template word to project name and delete this comment
-    add_coverage(template)
     add_coverage(tests)
     list(APPEND LCOV_REMOVE_PATTERNS "'${PROJECT_SOURCE_DIR}/tests/*'")
     coverage_evaluate()
