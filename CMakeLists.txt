@@ -31,7 +31,7 @@ hunter_add_package(nlohmann_json)
 find_package(nlohmann_json CONFIG REQUIRED)
 
 add_library(template STATIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/sources/parser_main.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}
         sources/student.cpp sources/parser.cpp)
 
 add_executable(tests
@@ -39,7 +39,7 @@ add_executable(tests
         sources/student.cpp sources/parser.cpp)
 
 add_executable(parser
-        ${CMAKE_CURRENT_SOURCE_DIR}/sources/parser_main.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}
         sources/student.cpp sources/parser.cpp)
 
 target_include_directories(template
